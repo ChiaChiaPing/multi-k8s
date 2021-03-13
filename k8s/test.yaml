@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: test
+  template:
+    metadata:
+      labels:
+        component: test
+    spec:
+      volumes:
+        - name: postgres-storage2
+          persistentVolumeClaim:
+            claimName: database-persistent-volume-claim
+      containers:
+        - name: test
+          image: stephengrider/multi-client
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: postgres-storage2
+              mountPath: /tmp
+              subPath: test
