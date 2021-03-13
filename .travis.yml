@@ -20,7 +20,7 @@ script:
   - docker run -e CI=true s0261105/react-client-test npm test
 deploy:
   provider: script
-  script: ./deploy.sh
-  branch:
-    on: main
+  script: bash ./deploy.sh
+  on:
+    branch: main
   
