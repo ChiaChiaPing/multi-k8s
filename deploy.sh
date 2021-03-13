@@ -11,7 +11,7 @@ docker push s0261105/multi-client:$SHA
 docker push s0261105/multi-server:$SHA
 
 
-kubeclt apply -f ./k8s
+kubectl apply -f ./k8s
 
 kubectl set image deployments/server-deployment server=s0261105/multi-server:$SHA
 kubectl set image deployments/client-deployment client=s0261105/multi-client:$SHA
