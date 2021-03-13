@@ -10,9 +10,9 @@ docker push s0261105/multi-worker:$SHA
 docker push s0261105/multi-client:$SHA
 docker push s0261105/multi-server:$SHA
 
-kubectl set image Deployments/server-deployment server=s0261105/multi-server:$SHA
-kubectl set image Deployments/client-deployment client=s0261105/multi-client:$SHA
-kubectl set image Deployments/worker-deployment worker=s0261105/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=s0261105/multi-server:$SHA
+kubectl set image deployments/client-deployment client=s0261105/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=s0261105/multi-worker:$SHA
 
 
 
