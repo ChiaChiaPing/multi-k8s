@@ -1,6 +1,6 @@
 docker build -t s0261105/multi-client:latest -t s0261105/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t s0261105/multi-server:latest -t s0261105/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t s0261105/multi-worker:latest -t s0261105/multi-worker:$SHA -f ./client/Dockerfile ./worker
+docker build -t s0261105/multi-worker:latest -t s0261105/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push s0261105/multi-worker:latest
 docker push s0261105/multi-client:latest
